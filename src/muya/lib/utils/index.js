@@ -348,10 +348,27 @@ export const wordCount = markdown => {
   const removedChinese = markdown.replace(/[\u4e00-\u9fa5]/g, '')
   const tokens = removedChinese.split(/[\s\n]+/).filter(t => t)
   const chineseWordLength = markdown.length - removedChinese.length
-  word += chineseWordLength + tokens.length
+  // word += chineseWordLength + tokens.length
   character += tokens.reduce((acc, t) => acc + t.length, 0) + chineseWordLength
   all += markdown.length
-
+  const docContent = markdown
+  const filterStr = docContent.replace(/\r\n/g, '\n')
+  // 中文字数
+  const chineseTotal = filterStr.match(/[\u4e00-\u9fa5]/g)
+  // 匹配单字字符
+  const englishTotal = filterStr.match(/\b\w+\b/g)
+  // 匹配数字
+  const letterTotal = filterStr.match(/\b\d+\b/g)
+  word = 0
+  if (chineseTotal !== null) {
+    word += chineseTotal.length
+  }
+  if (englishTotal !== null) {
+    word += englishTotal.length
+  }
+  if (letterTotal !== null) {
+    word += letterTotal.length
+  }
   return { word, paragraph, character, all }
 }
 

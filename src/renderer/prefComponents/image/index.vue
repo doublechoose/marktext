@@ -1,8 +1,8 @@
 <template>
   <div class="pref-image">
-    <h4>Image</h4>
+    <h4>图片</h4>
     <section class="image-ctrl">
-      <div>Default action after an image is inserted from local folder or clipboard
+      <div>从本地文件夹或剪贴板插入图像后的默认操作
         <el-tooltip class='item' effect='dark'
           content='Clipboard handling is only fully supported on macOS and Windows.'
           placement='top-start'>

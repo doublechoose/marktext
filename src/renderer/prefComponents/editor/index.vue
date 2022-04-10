@@ -1,13 +1,13 @@
 <template>
   <div class="pref-editor">
-    <h4>Editor</h4>
+    <h4>编辑器</h4>
     <compound>
       <template #head>
-        <h6 class="title">Text editor settings:</h6>
+        <h6 class="title">文本编辑器设置:</h6>
       </template>
       <template #children>
         <range
-          description="Font size"
+          description="字体大小"
           :value="fontSize"
           :min="12"
           :max="32"
@@ -16,7 +16,7 @@
           :onChange="value => onSelectChange('fontSize', value)"
         ></range>
         <range
-          description="Line height"
+          description="行高"
           :value="lineHeight"
           :min="1.2"
           :max="2.0"
@@ -24,12 +24,12 @@
           :onChange="value => onSelectChange('lineHeight', value)"
         ></range>
         <font-text-box
-          description="Font family"
+          description="字体选择"
           :value="editorFontFamily"
           :onChange="value => onSelectChange('editorFontFamily', value)"
         ></font-text-box>
         <text-box
-          description="Maximum width of text editor"
+          description="调整文本编辑器的宽度"
           notes="Leave empty for theme default, otherwise use number with unit suffix, which is one of 'ch' for characters, 'px' for pixels, or '%' for percentage."
           :input="editorLineWidth"
           :regexValidator="/^(?:$|[0-9]+(?:ch|px|%)$)/"
@@ -40,11 +40,11 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Code block settings:</h6>
+        <h6 class="title">代码块设置:</h6>
       </template>
       <template #children>
         <range
-          description="Font size"
+          description="字体大小"
           :value="codeFontSize"
           :min="12"
           :max="28"
@@ -53,7 +53,7 @@
           :onChange="value => onSelectChange('codeFontSize', value)"
         ></range>
         <font-text-box
-          description="Font family"
+          description="字体选择"
           :onlyMonospace="true"
           :value="codeFontFamily"
           :onChange="value => onSelectChange('codeFontFamily', value)"
@@ -61,12 +61,12 @@
         <!-- FIXME: Disabled due to #1648. -->
         <bool
           v-show="false"
-          description="Show line numbers"
+          description="显示行数"
           :bool="codeBlockLineNumbers"
           :onChange="value => onSelectChange('codeBlockLineNumbers', value)"
         ></bool>
         <bool
-          description="Remove leading and trailing empty lines"
+          description="删除前导和尾随空行"
           :bool="trimUnnecessaryCodeBlockEmptyLines"
           :onChange="value => onSelectChange('trimUnnecessaryCodeBlockEmptyLines', value)"
         ></bool>
@@ -75,21 +75,21 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Writing behavior:</h6>
+        <h6 class="title">写作行为:</h6>
       </template>
       <template #children>
         <bool
-          description="Automatically close brackets when writing"
+          description="书写时自动关闭括号"
           :bool="autoPairBracket"
           :onChange="value => onSelectChange('autoPairBracket', value)"
         ></bool>
         <bool
-          description="Automatically complete markdown syntax"
+          description="自动完成markdown语法"
           :bool="autoPairMarkdownSyntax"
           :onChange="value => onSelectChange('autoPairMarkdownSyntax', value)"
         ></bool>
         <bool
-          description="Automatically close quotation marks"
+          description="自动关闭引号"
           :bool="autoPairQuote"
           :onChange="value => onSelectChange('autoPairQuote', value)"
         ></bool>
@@ -98,34 +98,34 @@
 
     <compound>
       <template #head>
-        <h6 class="title">File representation:</h6>
+        <h6 class="title">文件表示:</h6>
       </template>
       <template #children>
         <cur-select
-          description="Preferred tab width"
+          description="首选标签宽度"
           :value="tabSize"
           :options="tabSizeOptions"
           :onChange="value => onSelectChange('tabSize', value)"
         ></cur-select>
         <cur-select
-          description="Line separator type"
+          description="行分隔符类型"
           :value="endOfLine"
           :options="endOfLineOptions"
           :onChange="value => onSelectChange('endOfLine', value)"
         ></cur-select>
         <cur-select
-          description="Default encoding"
+          description="默认编码"
           :value="defaultEncoding"
           :options="defaultEncodingOptions"
           :onChange="value => onSelectChange('defaultEncoding', value)"
         ></cur-select>
         <bool
-          description="Automatically detect file encoding"
+          description="自动检测文件编码"
           :bool="autoGuessEncoding"
           :onChange="value => onSelectChange('autoGuessEncoding', value)"
         ></bool>
         <cur-select
-          description="Handling of trailing newline characters"
+          description="尾随换行符处理"
           :value="trimTrailingNewline"
           :options="trimTrailingNewlineOptions"
           :onChange="value => onSelectChange('trimTrailingNewline', value)"
@@ -135,27 +135,27 @@
 
     <compound>
       <template #head>
-        <h6 class="title">Misc:</h6>
+        <h6 class="title">其他:</h6>
       </template>
       <template #children>
         <cur-select
-          description="Text direction"
+          description="文本方向"
           :value="textDirection"
           :options="textDirectionOptions"
           :onChange="value => onSelectChange('textDirection', value)"
         ></cur-select>
         <bool
-          description="Hide hint for selecting type of new paragraph"
+          description="隐藏选择新段落类型的提示"
           :bool="hideQuickInsertHint"
           :onChange="value => onSelectChange('hideQuickInsertHint', value)"
         ></bool>
         <bool
-          description="Hide popup when cursor is over link"
+          description="当光标位于链接上方时隐藏弹出窗口"
           :bool="hideLinkPopup"
           :onChange="value => onSelectChange('hideLinkPopup', value)"
         ></bool>
         <bool
-          description="Whether to automatically check any related tasks"
+          description="是否自动检查任何相关任务"
           :bool="autoCheck"
           :onChange="value => onSelectChange('autoCheck', value)"
         ></bool>

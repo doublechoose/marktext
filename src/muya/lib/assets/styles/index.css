@@ -64,7 +64,8 @@ mark::after {
 }
 
 div.ag-show-quick-insert-hint p.ag-paragraph.ag-active > span.ag-paragraph-content:first-of-type:empty::after {
-  content: 'Type @ to insert';
+  /* content: 'Type @ to insert'; */
+  content: '键入 @ 以插入';
   color: var(--editorColor10);
 }
 

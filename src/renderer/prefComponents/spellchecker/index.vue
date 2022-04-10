@@ -1,6 +1,7 @@
 <template>
   <div class="pref-spellchecker">
-    <h4>Spelling</h4>
+    <!-- <h4>Spelling</h4> -->
+    <h4>拼写</h4>
     <compound>
       <template #head>
         <bool

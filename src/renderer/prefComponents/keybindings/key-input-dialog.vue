@@ -23,12 +23,12 @@
           >
         </div>
         <div class="footer">
-          <div class="descriptions">Press Enter to continue or ESC to exit.</div>
+          <div class="descriptions">按Enter继续或ESC退出.</div>
           <div
             v-show="!isKeybindingValid"
             class="invalid-keybinding"
           >
-            Current key combination cannot be bound!
+            当前组合键无法绑定！
           </div>
         </div>
       </div>

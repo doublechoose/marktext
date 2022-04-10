@@ -5,17 +5,20 @@ import { isOsx } from '../../config'
 
 export default function (keybindings) {
   const menu = {
-    label: '&Window',
+    // label: '&Window',
+    label: '&窗口',
     role: 'window',
     submenu: [{
-      label: 'Minimize',
+      // label: 'Minimize',
+      label: '最小化',
       accelerator: keybindings.getAccelerator('window.minimize'),
       click (menuItem, browserWindow) {
         minimizeWindow(browserWindow)
       }
     }, {
       id: 'alwaysOnTopMenuItem',
-      label: 'Always on Top',
+      // label: 'Always on Top',
+      label: '置顶',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('window.toggle-always-on-top'),
       click (menuItem, browserWindow) {
@@ -24,13 +27,15 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Zoom In',
+      // label: 'Zoom In',
+      label: '缩小',
       accelerator: keybindings.getAccelerator('window.zoom-in'),
       click (menuItem, browserWindow) {
         zoomIn(browserWindow)
       }
     }, {
-      label: 'Zoom Out',
+      // label: 'Zoom Out',
+      label: '放大',
       accelerator: keybindings.getAccelerator('window.zoom-out'),
       click (menuItem, browserWindow) {
         zoomOut(browserWindow)
@@ -38,7 +43,8 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Show in Full Screen',
+      // label: 'Show in Full Screen',
+      label: '全屏显示',
       accelerator: keybindings.getAccelerator('window.toggle-full-screen'),
       click (item, browserWindow) {
         if (browserWindow) {
@@ -50,7 +56,8 @@ export default function (keybindings) {
 
   if (isOsx) {
     menu.submenu.push({
-      label: 'Bring All to Front',
+      // label: 'Bring All to Front',
+      label: '全部置于顶层',
       click () {
         Menu.sendActionToFirstResponder('arrangeInFront:')
       }

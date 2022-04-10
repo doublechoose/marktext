@@ -7,6 +7,8 @@ import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 import axios from './axios'
 import store from './store'
+// 引入i18n国际化插件 yoy
+import VueI18n from 'vue-i18n'
 import './assets/symbolIcon'
 import {
   Dialog,
@@ -86,6 +88,16 @@ Vue.use(Tabs)
 Vue.use(TabPane)
 Vue.use(Input)
 
+Vue.use(VueI18n)
+// 注册i18n实例并引入语言文件
+const i18n = new VueI18n({
+  locale: 'zh', // 定义默认语言为中文
+  messages: {
+    zh: require('@/assets/languages/zh.json'),
+    en: require('@/assets/languages/en.json')
+  }
+})
+
 Vue.use(VueRouter)
 
 Vue.use(VueElectron)
@@ -102,6 +114,7 @@ const router = new VueRouter({
 
 /* eslint-disable no-new */
 new Vue({
+  i18n,
   store,
   router,
   template: '<router-view class="view"></router-view>'

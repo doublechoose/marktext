@@ -1,12 +1,13 @@
 <template>
   <div class="pref-sidebar">
-    <h3 class="title">Preferences</h3>
+    <!-- <h3 class="title">Preferences</h3> -->
+    <h3 class="title">首选项</h3>
     <section class="search-wrapper">
       <el-autocomplete
         popper-class="pref-autocomplete"
         v-model="state"
         :fetch-suggestions="querySearch"
-        placeholder="Search preferences"
+        placeholder="搜索首选项"
         :trigger-on-focus="false"
         @select="handleSelect">
         <i
@@ -41,7 +42,8 @@ export default {
   data () {
     this.category = category
     return {
-      currentCategory: 'general',
+      // currentCategory: 'general',
+      currentCategory: '通用',
       restaurants: [],
       state: ''
     }

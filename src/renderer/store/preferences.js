@@ -14,7 +14,7 @@ const state = {
   fileSortBy: 'created',
   startUpAction: 'lastState',
   defaultDirectoryToOpen: '',
-  language: 'en',
+  language: 'zh',
 
   editorFontFamily: 'Open Sans',
   fontSize: 16,

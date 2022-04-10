@@ -1,0 +1,11 @@
+{
+  "titleBar":{
+    "Words": "Words",
+    "Characters": "Characters",
+    "Paragraphs": "Paragraphs"
+  },
+  "fileMenu":{
+    "newTab": "New Tab",
+    "newWindow": "New Window"
+  }
+}

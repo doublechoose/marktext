@@ -1,7 +1,7 @@
 <template>
   <section class="image-folder">
-    <h5>Global or relative image folder</h5>
-    <text-box description="Global image folder" :input="imageFolderPath"
+    <h5>全局或相对图片文件夹</h5>
+    <text-box description="全局图片文件夹" :input="imageFolderPath"
       :regexValidator="/^(?:$|([a-zA-Z]:)?[\/\\].*$)/" :defaultValue="folderPathPlaceholder"
       :onChange="value => modifyImageFolderPath(value)"></text-box>
     <div>
@@ -21,7 +21,7 @@
           :defaultValue="relativeDirectoryNamePlaceholder"
           :onChange="value => onSelectChange('imageRelativeDirectoryName', value)"></text-box>
         <div class="footnote">
-          Include <code>${filename}</code> in the text-box above to automatically insert the document file name.
+          在上面的文本框中包含<code>${filename}</code>，以自动插入文档文件名。
         </div>
       </template>
     </compound>

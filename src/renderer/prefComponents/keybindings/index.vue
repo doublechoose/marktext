@@ -1,10 +1,10 @@
 <template>
   <div class="pref-keybindings">
-    <h4>Key Bindings</h4>
+    <h4>快捷键</h4>
     <section class="keybindings">
       <div class="text">
-        Customize MarkText shortcuts and click on the save button below to apply all changes (requires a restart).
-        All available and default key binding can be found <a class="link" @click="openKeybindingWiki">online</a>.
+        自定义标记文本快捷方式，然后单击下面的“保存”按钮以应用所有更改（需要重新启动）。
+        所有可用的和默认的密钥绑定都可以在网上找到。<a class="link" @click="openKeybindingWiki">online</a>.
       </div>
       <el-table
         :data="keybindingList"
@@ -31,13 +31,13 @@
     </section>
     <section class="footer">
       <separator></separator>
-      <el-button size="medium" @click="saveKeybindings">Save</el-button>
-      <el-button size="medium" @click="restoreDefaults">Restore default key bindings</el-button>
+      <el-button size="medium" @click="saveKeybindings">保存</el-button>
+      <el-button size="medium" @click="restoreDefaults">重置默认快捷键</el-button>
     </section>
     <section v-if="showDebugTools" class="keyboard-debug">
       <separator></separator>
       <div><strong>Debug options:</strong></div>
-      <el-button size="medium" @click="dumpKeyboardInformation">Dump keyboard information</el-button>
+      <el-button size="medium" @click="dumpKeyboardInformation">转存键盘信息</el-button>
     </section>
     <key-input-dialog
       :showWithId="selectedShortcutId"
