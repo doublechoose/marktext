@@ -357,17 +357,12 @@ export const wordCount = markdown => {
   const chineseTotal = filterStr.match(/[\u4e00-\u9fa5]/g)
   // 匹配单字字符
   const englishTotal = filterStr.match(/\b\w+\b/g)
-  // 匹配数字
-  const letterTotal = filterStr.match(/\b\d+\b/g)
   word = 0
   if (chineseTotal !== null) {
     word += chineseTotal.length
   }
   if (englishTotal !== null) {
     word += englishTotal.length
-  }
-  if (letterTotal !== null) {
-    word += letterTotal.length
   }
   return { word, paragraph, character, all }
 }
